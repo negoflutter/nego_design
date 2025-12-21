@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nego_design/_import.dart';
+import 'package:nego_design/l10n/nego_localizations.dart';
 
 class InputEmailOrPhone extends StatefulWidget {
   final TextEditingController? controller;
@@ -17,8 +18,8 @@ class InputEmailOrPhone extends StatefulWidget {
   const InputEmailOrPhone({
     super.key,
     this.label,
-    this.labelText = 'Email ou Telefone',
-    this.hintText = 'Digita o email ou contato',
+    this.labelText = 'Email or Telephone',
+    this.hintText = 'Enter your email or contact details',
     this.controller,
     this.maxLength,
     this.obscureText = false,
@@ -40,16 +41,16 @@ class _InputEmailOrPhoneState extends State<InputEmailOrPhone> {
       key: widget.key,
       label: widget.label,
       filled: widget.filled,
-      hintText: widget.hintText,
       fillColor: widget.fillColor,
-      labelText: widget.labelText,
       onChanged: widget.onChanged,
       maxLength: widget.maxLength,
       controller: widget.controller,
       inputBorder: widget.inputBorder,
       obscureText: widget.obscureText,
-      textInputType: TextInputType.emailAddress,
+      textInputType: TextInputType.text,
       textInputAction: widget.textInputAction,
+      hintText: NegoLocalizations.of(context)?.inputEmailOrPhoneHintText ?? widget.hintText,
+      labelText: NegoLocalizations.of(context)?.inputEmailOrPhoneLabelText ?? widget.labelText,
       prefixIcon: Icon(Icons.perm_phone_msg_outlined),
       suffixIcon: IconButton(
         icon: Icon(Icons.close),

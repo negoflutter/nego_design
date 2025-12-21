@@ -1,0 +1,19 @@
+{
+  "getStarted": "Comece agora",
+  "enter": "Entrar",
+  "enterWith": "Entrar com {method}",
+  "registration": "Cadastramento",
+
+  "loginTitle": "Autenticação",
+  "loginDesc": "Faça o processo de autenticação, forneça as suas credências",
+  "loginForgotPassword": "Esqueci minha senha?",
+  "loginNotHaveAccount": "Não tenho conta?",
+
+  "orDividerText": "Ou",
+
+  "inputEmailOrPhoneLabelText": "Email ou Telephone",
+  "inputEmailOrPhoneHintText": "Digita o email ou contato",
+
+  "inputPasswordLabelText": "Senha",
+  "inputPasswordHintText": "Digite sua senha"
+}

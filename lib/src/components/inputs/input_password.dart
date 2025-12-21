@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nego_design/_import.dart';
+import 'package:nego_design/l10n/nego_localizations.dart';
 
 class InputPassword extends StatefulWidget {
   final TextEditingController? controller;
@@ -16,8 +17,8 @@ class InputPassword extends StatefulWidget {
   const InputPassword({
     super.key,
     this.label,
-    this.labelText = 'Senha',
-    this.hintText = 'Digita a senha',
+    this.labelText = 'Password',
+    this.hintText = 'Enter your password',
     this.controller,
     this.maxLength,
     this.filled = true,
@@ -40,16 +41,16 @@ class _InputPasswordState extends State<InputPassword> {
       key: widget.key,
       label: widget.label,
       filled: widget.filled,
-      hintText: widget.hintText,
+      obscureText: _obscureText,
       fillColor: widget.fillColor,
-      labelText: widget.labelText,
       onChanged: widget.onChanged,
       maxLength: widget.maxLength,
       controller: widget.controller,
       inputBorder: widget.inputBorder,
-      obscureText: _obscureText,
-      textInputType: TextInputType.visiblePassword,
       textInputAction: widget.textInputAction,
+      textInputType: TextInputType.visiblePassword,
+      hintText: NegoLocalizations.of(context)?.inputPasswordHintText ?? widget.hintText,
+      labelText: NegoLocalizations.of(context)?.inputPasswordLabelText ?? widget.labelText,
       prefixIcon: Icon(Icons.lock_outline),
       suffixIcon: IconButton(
         icon: Icon(_obscureText? Icons.visibility_off_sharp : Icons.visibility_sharp),

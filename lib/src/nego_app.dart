@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nego_design/_import.dart';
+import 'package:nego_design/l10n/nego_localizations.dart';
 
 class NegoApp extends StatelessWidget {
   final GlobalKey<NavigatorState>? navigatorKey;
@@ -27,7 +28,7 @@ class NegoApp extends StatelessWidget {
   final Iterable<LocalizationsDelegate<dynamic>>? localizationsDelegates;
   final LocaleListResolutionCallback? localeListResolutionCallback;
   final LocaleResolutionCallback? localeResolutionCallback;
-  final Iterable<Locale> supportedLocales;
+  final Iterable<Locale>? supportedLocales;
   final bool debugShowMaterialGrid;
   final bool showPerformanceOverlay;
   final bool checkerboardRasterCacheImages;
@@ -67,7 +68,7 @@ class NegoApp extends StatelessWidget {
     this.localizationsDelegates,
     this.localeListResolutionCallback,
     this.localeResolutionCallback,
-    this.supportedLocales = const <Locale>[Locale('en', 'US')],
+    this.supportedLocales,
     this.debugShowMaterialGrid = false,
     this.showPerformanceOverlay = false,
     this.checkerboardRasterCacheImages = false,
@@ -109,10 +110,16 @@ class NegoApp extends StatelessWidget {
       themeAnimationDuration: themeAnimationDuration,
       themeAnimationCurve: themeAnimationCurve,
       locale: locale,
-      localizationsDelegates: localizationsDelegates,
+      localizationsDelegates: [
+        ...NegoLocalizations.localizationsDelegates,
+        ...?localizationsDelegates,
+      ],
+      supportedLocales: [
+        ...NegoLocalizations.supportedLocales,
+        ...?supportedLocales,
+      ],
       localeListResolutionCallback: localeListResolutionCallback,
       localeResolutionCallback: localeResolutionCallback,
-      supportedLocales: supportedLocales,
       debugShowMaterialGrid: debugShowMaterialGrid,
       showPerformanceOverlay: showPerformanceOverlay,
       checkerboardRasterCacheImages: checkerboardRasterCacheImages,

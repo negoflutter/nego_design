@@ -20,7 +20,7 @@ class SocialLinkButton extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(image, width: 20, height: 20,),
+          Image.asset(image, width: 20, height: 20, package: 'nego_design',),
           const SizedBox(width: 20),
           Text(label, style: Theme.of(context).textTheme.bodyMedium),
         ],

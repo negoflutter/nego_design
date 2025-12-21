@@ -43,8 +43,9 @@ class _PageImageOnboardingState extends State<PageImageOnboarding> {
           widget.models.length,
           (index) => PageItemIndicateNumberOnboarding(
             key: ValueKey('onboarding_page_$index'),
-            backgroundType: widget.backgroundType,
             alignmentButton: widget.alignmentButton,
+            backgroundType: widget.backgroundType,
+            onPressed: widget.onPressed,
             model: widget.models[index],
             length: widget.models.length,
             index: index + 1,

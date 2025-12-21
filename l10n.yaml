@@ -1,0 +1,4 @@
+arb-dir: lib/l10n
+template-arb-file: nego_en.arb
+output-localization-file: nego_localizations.dart
+output-class: NegoLocalizations

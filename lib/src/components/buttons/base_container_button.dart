@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class LoginButton extends StatelessWidget {
+class BaseContainerButton extends StatelessWidget {
   final Function()? onPressed;
 
   final EdgeInsetsGeometry? padding;
   final Alignment alignment;
   final String label;
-  const LoginButton({
+  const BaseContainerButton({
     super.key,
-    this.label = 'Login',
+    this.label = 'Confirm',
     this.onPressed,
     this.padding = const EdgeInsets.symmetric(vertical: 20),
     this.alignment = Alignment.bottomRight,
@@ -16,14 +16,16 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          padding: padding
+          padding: padding,
+          backgroundColor: colorScheme.primary,
         ),
-        child: Text('Entrar'),
+        child: Text(label),
       ),
     );
   }

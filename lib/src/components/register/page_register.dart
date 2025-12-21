@@ -36,7 +36,7 @@ class _PageRegisterState extends State<PageRegister> {
           const SizedBox(height: 20),
           InputPassword(controller: _passwordController),
           const SizedBox(height: 10),
-          LoginButton(onPressed: () {}),
+          BaseContainerButton(onPressed: () {}),
           const SizedBox(height: 20),
           const OrDivider(),
           const SizedBox(height: 20),

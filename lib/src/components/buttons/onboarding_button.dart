@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nego_design/l10n/nego_localizations.dart';
 
 class OnboardingButton extends StatelessWidget {
   final Function()? onPressed;
@@ -30,7 +31,7 @@ class OnboardingButton extends StatelessWidget {
             children: [
               const SizedBox(width: 5),
               Text(
-                label,
+                NegoLocalizations.of(context)?.getStarted ?? label,
                 style: TextStyle(fontSize: 15, color: Colors.orange.shade50),
               ),
               Container(

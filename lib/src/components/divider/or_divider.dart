@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nego_design/l10n/nego_localizations.dart';
 
 class OrDivider extends StatelessWidget {
   const OrDivider({super.key});
@@ -11,15 +12,13 @@ class OrDivider extends StatelessWidget {
       child: Stack(
           alignment: Alignment.center,
           children: [
-            Divider(
-              color: colorScheme.primary,
-            ),
+            Divider(color: colorScheme.primary,),
             Container(
               color: colorScheme.onPrimary,
               width: MediaQuery.of(context).size.width * 0.09,
               child: Center(
                 child: Text(
-                  'Ou',
+                  NegoLocalizations.of(context)?.orDividerText ?? 'Or',
                 ),
               ),
             ),

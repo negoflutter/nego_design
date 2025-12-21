@@ -1,0 +1,19 @@
+{
+  "getStarted": "Get Started",
+  "enter": "Enter",
+  "enterWith": "Enter with {method}",
+  "registration": "Registration",
+
+  "loginTitle": "Authentication",
+  "loginDesc": "Complete the authentication process, provide your credentials",
+  "loginForgotPassword": "Forgot my password?",
+  "loginNotHaveAccount": "I don't have an account?",
+
+  "orDividerText": "Or",
+
+  "inputEmailOrPhoneLabelText": "Email or Telephone",
+  "inputEmailOrPhoneHintText": "Enter your email or contact details",
+
+  "inputPasswordLabelText": "Password",
+  "inputPasswordHintText": "Enter your password"
+}
