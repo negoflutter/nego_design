@@ -3,6 +3,7 @@ import 'package:lottie/lottie.dart';
 import 'package:nego_design/_import.dart';
 
 class NegoOtpVerification extends StatefulWidget {
+  final Function(OtpVerificationModel model)? onPressed;
   final Function()? onResendOtp;
   final Function()? onBackButton;
   final bool visibleBackButton;
@@ -16,6 +17,7 @@ class NegoOtpVerification extends StatefulWidget {
     this.onBackButton,
     this.visibleBackButton = false,
     this.showFieldAsBox = false,
+    this.onPressed,
   });
 
   @override
@@ -71,7 +73,13 @@ class _NegoOtpVerificationState extends State<NegoOtpVerification> {
                 return BaseContainerButton(
                   isDisabled: value.length != 6,
                   label: NegoLocalizations.of(context)?.next ?? 'Next',
-                  onPressed: () {},
+                  onPressed: () {
+                    if (!_formKey.currentState!.validate()) return;
+                    if (widget.onPressed == null) return;
+                    widget.onPressed!(OtpVerificationModel(
+                      code: value,
+                    ));
+                  },
                 );
               }
             ),

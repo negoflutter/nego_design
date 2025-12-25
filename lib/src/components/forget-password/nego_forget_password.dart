@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:nego_design/_import.dart';
 
 class NegoForgetPassword extends StatefulWidget {
+  final Function(ForgetPasswordModel model)? onPressed;
   final String? pageNamedHome;
 
   const NegoForgetPassword({
     super.key, this.pageNamedHome,
+    this.onPressed,
   });
 
   @override
@@ -59,7 +61,13 @@ class _NegoForgetPasswordState extends State<NegoForgetPassword> {
             const SizedBox(height: 25),
             BaseContainerButton(
               label: NegoLocalizations.of(context)?.next ?? 'Next',
-              onPressed: () {},
+              onPressed: () {
+                if (!_formKey.currentState!.validate()) return;
+                if (widget.onPressed == null) return;
+                widget.onPressed!( ForgetPasswordModel(
+                  emailOrPhone: _emailOrPhoneController.text,
+                ));
+              },
             ),
             const SizedBox(height: 10),
             LinkEnterWithoutAccount(pageNamedHome: widget.pageNamedHome,)

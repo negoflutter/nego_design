@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class BaseContainerButton extends StatelessWidget {
   final Function()? onPressed;
-
   final EdgeInsetsGeometry? padding;
   final Alignment alignment;
   final String label;
