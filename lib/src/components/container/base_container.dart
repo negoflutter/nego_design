@@ -5,7 +5,9 @@ class BaseContainer extends StatelessWidget {
   final String title;
   final String description;
   final bool visibleBackButton;
-  const BaseContainer({super.key, required this.child, required this.title, required this.description, this.visibleBackButton = false});
+  final Function()? onBackButton;
+
+  const BaseContainer({super.key, required this.child, required this.title, required this.description, this.visibleBackButton = false, this.onBackButton});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class BaseContainer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (visibleBackButton) ... [
+            if (visibleBackButton || onBackButton != null) ... [
               const SizedBox(height: 60),
               Container(
                   margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -34,7 +36,7 @@ class BaseContainer extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50)
                   ),
                   child: IconButton(
-                      onPressed: () {
+                      onPressed: onBackButton ?? () {
                         if(Navigator.canPop(context)) Navigator.pop(context);
                       },
                       icon: Icon(Icons.arrow_back)

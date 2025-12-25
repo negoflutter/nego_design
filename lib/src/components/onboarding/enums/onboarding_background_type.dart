@@ -1,0 +1,4 @@
+enum OnboardingBackgroundType {
+  scale,
+  none
+}

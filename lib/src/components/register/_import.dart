@@ -1,1 +1,1 @@
-export 'page_register.dart';
+export 'nego_register.dart';

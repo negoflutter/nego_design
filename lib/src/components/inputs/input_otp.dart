@@ -5,24 +5,27 @@ class InputOtp extends StatelessWidget {
   final Function(String verificationCode)? onSubmit;
   final Function(String code)? onCodeChanged;
   final int numberOfFields;
+
+  final bool showFieldAsBox;
   const InputOtp({
     super.key,
-    this.onCodeChanged,
     this.onSubmit,
+    this.onCodeChanged,
     this.numberOfFields = 6,
+    this.showFieldAsBox = false,
   });
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     return OtpTextField(
-      showFieldAsBox: true,
       borderRadius: BorderRadius.circular(50),
       contentPadding: EdgeInsets.all(10),
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      borderColor: colorScheme.primary,
+      showFieldAsBox: showFieldAsBox,
       numberOfFields: numberOfFields,
       onCodeChanged: onCodeChanged,
-      borderColor: colorScheme.primary,
       onSubmit: onSubmit,
     );
   }

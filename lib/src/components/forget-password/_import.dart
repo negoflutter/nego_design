@@ -1,1 +1,1 @@
-export 'page_forget_password.dart';
+export 'nego_forget_password.dart';

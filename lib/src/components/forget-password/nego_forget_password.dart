@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:nego_design/_import.dart';
 
-class PageForgetPassword extends StatefulWidget {
+class NegoForgetPassword extends StatefulWidget {
   final String? pageNamedHome;
 
-  const PageForgetPassword({
+  const NegoForgetPassword({
     super.key, this.pageNamedHome,
   });
 
   @override
-  State<PageForgetPassword> createState() => _PageForgetPasswordState();
+  State<NegoForgetPassword> createState() => _NegoForgetPasswordState();
 }
 
-class _PageForgetPasswordState extends State<PageForgetPassword> {
+class _NegoForgetPasswordState extends State<NegoForgetPassword> {
   final _emailOrPhoneController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 

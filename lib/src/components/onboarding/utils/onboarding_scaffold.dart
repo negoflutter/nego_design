@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:nego_design/_import.dart';
 
-class PageScaffoldOnboarding extends StatelessWidget {
-  final PageBackgroundType backgroundType;
+class OnboardingScaffold extends StatelessWidget {
+  final OnboardingBackgroundType backgroundType;
   final List<Widget> bottomWidgets;
   final List<Widget> topWidgets;
   final OnboardingModel model;
 
-  const PageScaffoldOnboarding({
+  const OnboardingScaffold({
     super.key,
-    this.backgroundType = PageBackgroundType.none,
+    this.backgroundType = OnboardingBackgroundType.none,
     this.bottomWidgets = const [],
     this.topWidgets = const [],
     required this.model
@@ -18,7 +18,7 @@ class PageScaffoldOnboarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     switch (backgroundType) {
-      case PageBackgroundType.none:
+      case OnboardingBackgroundType.none:
         return ImageBackgroundContainer(
           image: model.image,
           child: _PageOnboardingContainer(

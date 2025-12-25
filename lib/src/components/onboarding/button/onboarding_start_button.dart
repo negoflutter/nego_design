@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:nego_design/l10n/nego_localizations.dart';
+import 'package:nego_design/_import.dart';
 
-class OnboardingButton extends StatelessWidget {
+class OnboardingStartButton extends StatelessWidget {
   final Function()? onPressed;
   final Alignment alignment;
   final String label;
-  const OnboardingButton({
+  const OnboardingStartButton({
     super.key,
     this.label = 'Get Started',
     this.onPressed,

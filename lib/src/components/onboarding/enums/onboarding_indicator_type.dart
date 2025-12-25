@@ -1,0 +1,4 @@
+enum OnboardingIndicatorType {
+  numbers,
+  divisors;
+}

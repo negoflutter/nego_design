@@ -1,1 +1,1 @@
-export 'page_otp_verification.dart';
+export 'nego_otp_verification.dart';

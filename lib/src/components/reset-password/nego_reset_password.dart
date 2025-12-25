@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:nego_design/_import.dart';
 
-class PageResetPassword extends StatefulWidget {
+class NegoResetPassword extends StatefulWidget {
   final Function(ResetPasswordModel model)? onPressed;
+  final Function()? onBackButton;
+  final bool visibleBackButton;
   final String? pageNamedLogin;
   final String? pageNamedHome;
 
-  const PageResetPassword({
+  const NegoResetPassword({
     super.key,
     this.pageNamedLogin,
     this.onPressed,
     this.pageNamedHome,
+    this.onBackButton,
+    this.visibleBackButton = false
   });
 
   @override
-  State<PageResetPassword> createState() => _PageResetPasswordState();
+  State<NegoResetPassword> createState() => _NegoResetPasswordState();
 }
 
-class _PageResetPasswordState extends State<PageResetPassword> {
+class _NegoResetPasswordState extends State<NegoResetPassword> {
 
   final _passwordValueNotifier = ValueNotifier<String>('');
   final _confirmValueNotifier = ValueNotifier<String>('');
@@ -25,6 +29,7 @@ class _PageResetPasswordState extends State<PageResetPassword> {
   final _confirmController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
+
 
   @override
   void initState() {
@@ -43,6 +48,8 @@ class _PageResetPasswordState extends State<PageResetPassword> {
   @override
   Widget build(BuildContext context) {
     return BaseContainer(
+      onBackButton: widget.onBackButton,
+      visibleBackButton: widget.visibleBackButton,
       title: NegoLocalizations.of(context)?.resetPasswordTitle ?? 'Change password',
       description: NegoLocalizations.of(context)?.resetPasswordDesc ?? 'Fill in the details to change your password, save your password in a safe place, or activate one of our security methods',
       child: ListView(

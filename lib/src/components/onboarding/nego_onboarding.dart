@@ -1,27 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:nego_design/_import.dart';
 
-class PageImageOnboarding extends StatefulWidget {
-  final PageBackgroundType backgroundType;
+class NegoOnboarding extends StatefulWidget {
+  final OnboardingBackgroundType backgroundType;
+  final OnboardingIndicatorType indicatorType;
+  final OnboardingButtonType buttonType;
+  final MainAxisAlignment alignmentIndicator;
   final List<OnboardingModel> models;
   final Alignment alignmentButton;
   final Function()? onPressed;
 
-  const PageImageOnboarding({
+  const NegoOnboarding({
     super.key,
-    this.models = const [],
-    this.backgroundType = PageBackgroundType.none,
+    this.buttonType = OnboardingButtonType.arrowText,
+    this.indicatorType = OnboardingIndicatorType.numbers,
+    this.backgroundType = OnboardingBackgroundType.none,
+    this.alignmentIndicator = MainAxisAlignment.end,
     this.alignmentButton = Alignment.bottomRight,
+    this.models = const [],
     this.onPressed,
   });
 
   @override
-  State<PageImageOnboarding> createState() => _PageImageOnboardingState();
+  State<NegoOnboarding> createState() => _NegoOnboardingState();
 }
 
-class _PageImageOnboardingState extends State<PageImageOnboarding> {
+class _NegoOnboardingState extends State<NegoOnboarding> {
   final PageController _controller = PageController(initialPage: 0);
-
   @override
   void initState() {
     super.initState();
@@ -43,8 +48,11 @@ class _PageImageOnboardingState extends State<PageImageOnboarding> {
           widget.models.length,
           (index) => PageItemIndicateNumberOnboarding(
             key: ValueKey('onboarding_page_$index'),
+            alignmentIndicator: widget.alignmentIndicator,
+            buttonType: widget.buttonType,
             alignmentButton: widget.alignmentButton,
             backgroundType: widget.backgroundType,
+            indicatorType: widget.indicatorType,
             onPressed: widget.onPressed,
             model: widget.models[index],
             length: widget.models.length,

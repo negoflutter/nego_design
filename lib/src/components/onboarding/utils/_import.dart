@@ -1,1 +1,1 @@
-export 'page_scaffold_onboarding.dart';
+export 'onboarding_scaffold.dart';

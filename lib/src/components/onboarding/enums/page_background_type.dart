@@ -1,4 +1,0 @@
-enum PageBackgroundType {
-  scale,
-  none
-}

@@ -2,18 +2,18 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:nego_design/_import.dart';
 
-class PageRegister extends StatefulWidget {
+class NegoRegister extends StatefulWidget {
   final Function(RegisterModel model)? onPressed;
   final String? pageNamedLogin;
   final String? pageNamedHome;
 
-  const PageRegister({super.key, this.pageNamedLogin, this.onPressed, this.pageNamedHome});
+  const NegoRegister({super.key, this.pageNamedLogin, this.onPressed, this.pageNamedHome});
 
   @override
-  State<PageRegister> createState() => _PageRegisterState();
+  State<NegoRegister> createState() => _NegoRegisterState();
 }
 
-class _PageRegisterState extends State<PageRegister> {
+class _NegoRegisterState extends State<NegoRegister> {
   final _passwordController = TextEditingController();
   final _phoneController = TextEditingController();
   final _emailController = TextEditingController();

@@ -9,7 +9,7 @@ void main() {
 
       await tester.pumpWidget(
         NegoApp(
-          home: OnboardingButton(label: customLabel),
+          home: OnboardingStartButton(label: customLabel),
         ),
       );
 

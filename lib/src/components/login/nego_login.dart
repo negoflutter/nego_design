@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:nego_design/_import.dart';
 
-class PageLogin extends StatefulWidget {
+class NegoLogin extends StatefulWidget {
   final Function(LoginModel model)? onPressed;
   final String? pageNamedForgetPassword;
   final String? pageNamedRegister;
   final String? pageNamedHome;
 
-  const PageLogin({
+  const NegoLogin({
     super.key,
     this.onPressed,
     this.pageNamedHome,
@@ -16,10 +16,10 @@ class PageLogin extends StatefulWidget {
   });
 
   @override
-  State<PageLogin> createState() => _PageLoginState();
+  State<NegoLogin> createState() => _NegoLoginState();
 }
 
-class _PageLoginState extends State<PageLogin> {
+class _NegoLoginState extends State<NegoLogin> {
   final _emailOrPhoneController = TextEditingController();
   final _passwordController = TextEditingController();
 
