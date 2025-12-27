@@ -7,6 +7,7 @@ class NegoOtpVerification extends StatefulWidget {
   final Function()? onResendOtp;
   final Function()? onBackButton;
   final bool visibleBackButton;
+  final BaseContainerType containerType;
   final String? pageNamedHome;
 
   final bool showFieldAsBox;
@@ -18,6 +19,7 @@ class NegoOtpVerification extends StatefulWidget {
     this.visibleBackButton = false,
     this.showFieldAsBox = false,
     this.onPressed,
+    this.containerType = BaseContainerType.borderTop,
   });
 
   @override
@@ -37,6 +39,7 @@ class _NegoOtpVerificationState extends State<NegoOtpVerification> {
   @override
   Widget build(BuildContext context) {
     return BaseContainer(
+      type: widget.containerType,
       onBackButton: widget.onBackButton,
       visibleBackButton: widget.visibleBackButton,
       title: NegoLocalizations.of(context)?.otpVerificationTitle ?? 'Validation of the otp',

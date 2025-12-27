@@ -6,12 +6,20 @@ class NegoRegister extends StatefulWidget {
   final Function(RegisterModel model)? onPressed;
   final String? pageNamedLogin;
   final String? pageNamedHome;
+  final BaseContainerType containerType;
+  final Function()? onPressedGoogle;
+  final Function()? onPressedFacebook;
+  final GroupSocialType groupSocialType;
 
   const NegoRegister({
     super.key,
     this.pageNamedLogin,
     this.onPressed,
     this.pageNamedHome,
+    this.onPressedGoogle,
+    this.onPressedFacebook,
+    this.containerType = BaseContainerType.borderTop,
+    this.groupSocialType = GroupSocialType.linear,
   });
 
   @override
@@ -50,6 +58,7 @@ class _NegoRegisterState extends State<NegoRegister> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     return BaseContainer(
+      type: widget.containerType,
       title: NegoLocalizations.of(context)?.registration ?? 'Registration',
       description: NegoLocalizations.of(context)?.registerDesc ?? 'Complete the account creation process and fill in your details',
       child: Form(
@@ -77,15 +86,10 @@ class _NegoRegisterState extends State<NegoRegister> {
             ),
             const SizedBox(height: 20),
             const OrDivider(),
-            const SizedBox(height: 20),
-            SocialLinkButton(
-              label: NegoLocalizations.of(context)?.enterWith('Google') ?? 'Enter with Google',
-              image: NegoAppImage.google,
-            ),
-            const SizedBox(height: 20),
-            SocialLinkButton(
-              label: NegoLocalizations.of(context)?.enterWith('Facebook') ?? 'Enter with Facebook',
-              image: NegoAppImage.facebook,
+            GroupSocialButton(
+              onPressedFacebook: widget.onPressedFacebook,
+              onPressedGoogle: widget.onPressedGoogle,
+              type: widget.groupSocialType,
             ),
             const SizedBox(height: 20),
             Container(

@@ -1,3 +1,3 @@
-## 0.0.11
+## 0.0.12
 
-* TODO: valid form in NegoResetPassword.
+* TODO: documentation of some project components

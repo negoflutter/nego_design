@@ -51,7 +51,16 @@ class _MyAppState extends State<MyApp> {
     return NegoApp(
       debugShowCheckedModeBanner: false,
       title: 'NegoDesign',
-      home: NegoResetPassword(),
+      home: NegoLogin(
+        containerType: BaseContainerType.borderBottom,
+        groupSocialType: GroupSocialType.circle,
+        onPressedFacebook: () {
+          debugPrint('Facebook');
+        },
+        onPressedGoogle: () {
+          debugPrint('Google');
+        },
+      ),
     );
   }
 }

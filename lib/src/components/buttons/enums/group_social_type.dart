@@ -1,0 +1,4 @@
+enum GroupSocialType {
+  linear,
+  circle
+}

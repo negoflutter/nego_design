@@ -4,6 +4,7 @@ import 'package:nego_design/_import.dart';
 class NegoResetPassword extends StatefulWidget {
   final Function(ResetPasswordModel model)? onPressed;
   final Function()? onBackButton;
+  final BaseContainerType containerType;
   final bool visibleBackButton;
   final String? pageNamedLogin;
   final String? pageNamedHome;
@@ -15,6 +16,7 @@ class NegoResetPassword extends StatefulWidget {
     this.pageNamedHome,
     this.onBackButton,
     this.visibleBackButton = false,
+    this.containerType = BaseContainerType.borderTop,
   });
 
   @override
@@ -46,6 +48,7 @@ class _NegoResetPasswordState extends State<NegoResetPassword> {
   @override
   Widget build(BuildContext context) {
     return BaseContainer(
+      type: widget.containerType,
       onBackButton: widget.onBackButton,
       visibleBackButton: widget.visibleBackButton,
       title: NegoLocalizations.of(context)?.resetPasswordTitle ?? 'Change password',
